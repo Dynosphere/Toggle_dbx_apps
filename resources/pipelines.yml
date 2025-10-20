@@ -1,0 +1,17 @@
+resources:
+  jobs:
+    toggle_apps_job_demo:
+      name: ToggleAppStateJob
+      performance_target: STANDARD
+      schedule:
+        quartz_cron_expression: 24 10 8,19 * * ?
+        timezone_id: UTC
+      tasks:
+      - notebook_task:
+          base_parameters:
+            app_id: example_value_use_name_not_guid
+            day_end_hour: '19'
+            day_start_hour: '7'
+          notebook_path: ../src/toggle_state_notebook.ipynb
+          source: WORKSPACE
+        task_key: toggle_demo_myAppShortname

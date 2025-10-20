@@ -1,0 +1,12 @@
+bundle:
+  name: apps_toggle_state
+
+include:
+  - "resources/*"
+
+targets:
+  dev:
+    default: true
+    mode: development # will keep all schedules paused
+    # workspace:
+    #   host: your_url_here
